@@ -2,13 +2,27 @@ s = input()
 a = input()
 b = input()
 
-if a in b:
-    print('Impossible')
-elif a not in s:
-    print('Impossible')
-else:
-    while a in s:
-        cnt = 0
-        s.replace(a,b)
+'''Вашей программе на вход подаются две строки s и t, состоящие из строчных латинских букв.
+
+Выведите одно число – количество вхождений строки t в строку s.
+
+Пример:
+s = "abababa"
+t = "aba"
+
+Вхождения строки t в строку s:
+abababa
+abababa
+abababa'''
+
+s = input()
+t = input()
+i = 0
+cnt = 0
+for _ in range(len(s)):
+    if s.find(t,i) != -1:
+        i = s.find(t,i) + 1
         cnt += 1
-    print(cnt)
+    else:
+        break
+print(cnt)
